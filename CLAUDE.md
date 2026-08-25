@@ -7,21 +7,30 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 A personal CV / portfolio asset folder for Mohamed Magdy Ibrahim (Flutter developer) — **not** a software project. There is no package manager, build step, or test suite here. It holds:
 
 - `index.html` — the portfolio site: one self-contained page (HTML + CSS + JS, ~1070 lines, ~530 KB)
-- `v2/index.html` — a second, separate portfolio page served at `/v2`
+- `v2/index.html` — a second, separate portfolio page served at `/v2`, with the project case-study
+  view (see below)
 - `Mohamed_Magdy.pdf` — the résumé the pages link to. Both pages link it by relative path
   (`Mohamed_Magdy.pdf` from the root, `../Mohamed_Magdy.pdf` from `v2/`), so it must keep this exact
   name at the repo root or every résumé button 404s.
-- `assets/` — source material, referenced by nothing at runtime (see below):
-  - `cv-plaintext.txt` — the canonical CV content; source of truth for dates, metrics and wording
-  - `cv-ats.docx` — the ATS résumé document
-  - `portrait-suit.jpeg`, `portrait-closeup.jpeg` — portrait originals
-  - `escore-store-poster.webp`, `escore-splash.webp`, `sound-to-read-screenshot.webp`,
-    `tarkibat-hand-mockup.webp`, `tarkibat-icon.webp` — app artwork originals
+- `assets/` — source material, referenced by nothing at runtime (see below), one folder per kind:
+  - `cv/` — `cv-plaintext.txt` (the canonical CV content; source of truth for dates, metrics and
+    wording), `cv.docx` (the document `Mohamed_Magdy.pdf` is exported from), `cv-previous.pdf`
+    (the résumé it replaced) and `linkedin-profile.md`
+  - `art/` — app artwork originals: `escore-store-poster.webp`, `escore-splash.webp`,
+    `sound-to-read-screenshot.webp`, `tarkibat-hand-mockup.webp`, `tarkibat-icon.webp`,
+    `curai-logo.png`
+  - `portraits/` — `portrait-suit.jpeg`, `portrait-closeup.jpeg`
+  - `certificates/` — `eelu-bsc-certificate.webp`
+  - `shots/` — app screenshots, one folder per project, embedded into the `v2` case studies by
+    `tools/embed-shots.py`; see `assets/shots/README.md`
+- `tools/embed-shots.py` — the only script in the repo; it rewrites the `SHOTS` registry in
+  `v2/index.html`
 
 Nothing in `assets/` is loaded by either page — both are fully self-contained, with every image
 inlined as base64. The folder is the archive of originals the embedded copies were cropped from, so
-edit an image there and it changes nothing until you re-embed it. A portrait used on the page (the
-graduation photo) has no original in `assets/`; it exists only as embedded base64.
+edit an image there and it changes nothing until you re-embed it (`assets/shots/` is the exception
+only in that a script does the re-embedding for you). A portrait used on the page (the graduation
+photo) has no original in `assets/`; it exists only as embedded base64.
 
 To view the page: open `index.html` directly in a browser. No server, no build, no dependencies to install.
 
@@ -96,7 +105,32 @@ up, prefer it — the current one is a recovered crop, so it is shorter than the
 
 ### Editing content
 
-Content changes usually touch three places at once: the markup, `T.en`, and `T.ar`. Facts (job dates, the 65%/54%/5,000+/74% figures, store URLs, education) should stay consistent with `assets/cv-plaintext.txt`. To swap an image, base64-encode it and replace the `src` inline — do not introduce an external image path.
+Content changes usually touch three places at once: the markup, `T.en`, and `T.ar`. Facts (job dates, the 65%/54%/5,000+/74% figures, store URLs, education) should stay consistent with `assets/cv/cv-plaintext.txt`. To swap an image, base64-encode it and replace the `src` inline — do not introduce an external image path.
+
+## v2/index.html — the case-study view
+
+`v2` is its own page with its own dictionary and its own CSS; it shares no code with `index.html`.
+It follows the same contracts (one file, `T.en`/`T.ar` for every user-visible string, logical
+properties for RTL, a reduced-motion escape) and adds a project case study on top.
+
+Clicking a card's `.open` button opens `#pv`, a full-sheet dialog rendered from JS. Three pieces
+drive it, all near the end of the script:
+
+- `SHOTS` — screenshots per project. An entry is either a `data:` URI or `'#some-id'`, which reuses
+  an `<img>` already on the page instead of embedding the bytes twice. **Generated —
+  `tools/embed-shots.py` rewrites this whole object from `assets/shots/<key>/`, so hand edits are
+  lost on the next run.** Numbered files set the gallery order; an `extra/` subfolder is ignored.
+- `PROJ` — the case-study copy, keyed the same way, with `en` and `ar` objects per project holding
+  `eyebrow`, `lede`, `role`, `org`, `when`, `plat`, `ov[]`, `feats[]` and `metrics[][]`. Chrome
+  labels ("Overview", "The facts", …) live in `T` under `pv.*` keys instead.
+- `pvRender()` — builds the sheet's HTML. The status tag, the icon (read off the card's `--art`)
+  and the "next project" link are all derived, not stored.
+
+The sheet is deep-linked as `#p/<key>` through `pushState`, so Escape and the browser back button
+both close it; `pvDepth` counts how many projects deep the visit went so one Escape leaves
+altogether. A gallery image whose aspect ratio is not within 0.06 of the phone frame's (468/988)
+loses the bezel and renders as a plain card — that is what keeps store thumbnails from being
+cropped into a fake phone.
 
 ## Deployment
 

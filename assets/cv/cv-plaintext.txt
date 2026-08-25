@@ -1,0 +1,64 @@
+Mohamed Magdy Ibrahim
+Flutter Developer | Mobile Application Developer
+Shibin El Kom, Menoufia, Egypt | Open to Remote and Relocation
+Email: mohammedmego15@gmail.com | Phone: +20 101 541 5210 (WhatsApp)
+LinkedIn: https://www.linkedin.com/in/mohamedmagdy1911 | GitHub: https://github.com/mohamedmagdy2301
+
+PROFESSIONAL SUMMARY
+Flutter Developer with 2+ years of experience developing, testing and maintaining cross-platform Android and iOS applications published on Google Play and the Apple App Store. Strong knowledge of the Flutter SDK and Dart, Clean Architecture, MVVM, BLoC/Cubit state management, REST API integration with Dio, WebSockets, Firebase, local data storage and caching, and asynchronous programming with Futures, Streams and Isolates. Experienced in Arabic/English localization with RTL support, dark mode and light mode theming, unit, widget and integration testing, and performance optimization. Proven ability to lead development teams in Agile/Scrum environments, collaborate with backend, design and QA teams, and own applications from architecture through release.
+
+WORK EXPERIENCE
+
+Flutter Technical Lead
+Rov Group (Saudi Arabia Startup) | Remote | Full-time | Aug 2025 - Aug 2026
+Escore: https://escore.app/en | Google Play: https://play.google.com/store/apps/details?id=com.escore.app | App Store: https://apps.apple.com/eg/app/escore/id6748279752
+- Owned the Escore Flutter application end-to-end, covering architecture, feature development, code review, and release, serving 5,000+ registered users, with 74% on iOS and 26% on Android, from a single codebase.
+- Led the full software delivery lifecycle in an Agile and Scrum environment, collaborating with backend developers, UI/UX designers and QA engineers through sprint planning, code reviews, technical discussions and technical documentation; defined engineering standards and took part in developer interviews and hiring.
+- Improved application performance by optimizing rendering, memory usage and startup time, reducing jank frames and unnecessary widget rebuilds, measured with Flutter DevTools on low-end Android devices.
+- Reduced data payload by 65% and API response latency by 54% by optimizing REST API integration with Dio and JSON serialization, improving screen load times on slow mobile networks.
+- Built the real-time layer using WebSockets and Dart Streams for live score updates and animated tournament brackets, with offline caching and local data storage using Hive and SharedPreferences.
+- Debugged and troubleshot crashes, build errors and performance problems through structured problem-solving, and maintained unit, widget and integration testing coverage across core features.
+- Led Flutter development for Saudi Host, a pre-launch travel platform connecting visitors in Saudi Arabia with local tour guides, applying Role-Based Access Control (RBAC) with role-specific navigation and permissions built on GoRouter.
+- Implemented Arabic and English localization with runtime language switching, full RTL support and a scalable theme system covering dark mode and light mode.
+- Integrated Firebase Authentication with Google Sign-In and Sign in with Apple, which accounted for 90% of account registrations, and delivered push notifications through Firebase Cloud Messaging (FCM).
+
+Flutter Developer
+Sound To Read | Freelance, Saudi Arabia Client | May 2025 - Jul 2025
+Google Play: https://play.google.com/store/apps/details?id=com.soundtoread.student | App Store: https://apps.apple.com/us/app/sound-to-read/id6751246943
+- Built and published a cross-platform Flutter application for children aged 6-12 on Google Play and the Apple App Store.
+- Developed audio-based phonics lessons with native-speaker audio, progressive learning levels, and per-user progress tracking.
+- Integrated speech-based assessments and parent progress reports through RESTful APIs using Dio and asynchronous programming with Futures and Streams, with local data storage and caching for offline use.
+- Implemented push notifications with Firebase Cloud Messaging (FCM) for lesson reminders and parent progress alerts.
+- Managed the full release process: Google Play Console and App Store Connect submission, TestFlight distribution, app signing and kids-category compliance.
+
+Flutter Developer
+PureSoft | On-site, Single-app Freelance | Full-time | Jan 2025 - Mar 2025
+Tarkibat: Google Play: https://play.google.com/store/apps/details?id=com.puresoft.homeservices | App Store: https://apps.apple.com/eg/app/tarkibat-%D8%AA%D8%B1%D9%83%D9%8A%D8%A8%D8%A7%D8%AA/id6745254213
+- Delivered Tarkibat, a marketplace application connecting property owners with tradespeople across construction, painting and electrical services, published on Google Play and the Apple App Store.
+- Built the application with Clean Architecture, BLoC/Cubit state management, GoRouter navigation and Firebase integration including Firebase Authentication and Firestore.
+- Profiled and optimized performance, memory usage, rendering and startup time, and improved responsive UI and UX in collaboration with the team.
+
+Flutter Development Intern
+PureSoft | Internship | Aug 2024 - Nov 2024
+- Built responsive Flutter features and animations from Figma designs and worked within the team Git, GitHub, code review and release workflow.
+
+PROJECTS
+CurAi | Flutter, Dart, Clean Architecture, BLoC/Cubit (Graduation Project). Medical appointment booking app with doctor discovery, scheduling and patient profiles. https://github.com/mohamedmagdy2301/CurAi_app_mobile
+Azkary | Flutter, Dart, Hive. Offline-first Islamic app with prayer times, azkar and daily supplications, built with local data storage and dark mode and light mode theming. https://github.com/mohamedmagdy2301/azkary_app
+More Flutter projects: news, weather, bookly and notes apps - https://github.com/mohamedmagdy2301
+
+TECHNICAL SKILLS
+Mobile Development: Flutter, Dart, Flutter SDK, Android, iOS, Cross-Platform Mobile Development, Material Design, Cupertino, Responsive UI, Adaptive Layouts, Animations, Dark Mode and Light Mode, Theming
+Architecture and State Management: Clean Architecture, MVVM, SOLID Principles, Object-Oriented Programming (OOP), BLoC, Cubit, State Management, Repository Pattern, Dependency Injection, GoRouter, Navigation, Role-Based Access Control (RBAC), Asynchronous Programming, Futures, Streams, Isolates
+Data and Integration: REST APIs, RESTful APIs, HTTP, Dio, WebSockets, JSON, JSON Serialization, Firebase, Firebase Authentication, Firestore, Firebase Cloud Messaging (FCM), Push Notifications, Hive, SharedPreferences, Local Data Storage, Offline Caching, Google Sign-In, Sign in with Apple
+Testing and Performance: Unit Testing, Widget Testing, Integration Testing, Flutter DevTools, Performance Profiling, Performance Optimization, Debugging, Troubleshooting, Code Review
+Release and CI/CD: Google Play Console, App Store Connect, TestFlight, App Signing, CI/CD, GitHub Actions, Fastlane, Automated Builds, Deployment Workflows
+Localization: Internationalization (i18n), Localization (l10n), Arabic/English Localization, RTL Support, Multi-Language Applications
+Tools and Process: Git, GitHub, Version Control, Agile, Scrum, Technical Documentation, Android Studio, Xcode, Visual Studio Code, Figma, Postman
+Professional Skills: Problem-Solving, Communication Skills, Collaboration, Teamwork, Independent Work, Adaptability
+Languages: Arabic (Native), English (Professional Working Proficiency)
+
+EDUCATION AND CERTIFICATIONS
+Bachelor of Science in Computer Science | Egyptian E-Learning University (EELU) | Graduated 2025
+Professional Diploma in Mobile Application Development (Flutter) | Information Technology Institute (ITI), Menoufia | Sep 2023 - Jul 2024
+Certifications: Clean Architecture in Flutter (Foundations and Deep Dive), Flutter Advanced: BLoC and MVVM, Complete Flutter and Dart Development
