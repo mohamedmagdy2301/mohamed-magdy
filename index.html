@@ -97,7 +97,8 @@ h1 .grad{background:linear-gradient(100deg,var(--accent),var(--violet) 60%,var(-
 .m3:hover{border-color:var(--pale);color:var(--pale)}
 
 /* photo + orbital system */
-.port{--pw:min(392px,84vw);--r:calc(var(--pw)*.46);
+.port{--pw:min(392px,84vw);--tile:clamp(40px,10vw,54px);
+  --r:calc((var(--pw) - var(--tile))/2);
   position:relative;width:var(--pw);aspect-ratio:1;justify-self:center;isolation:isolate}
 
 .port .glow{position:absolute;inset:9%;border-radius:50%;z-index:0;
@@ -125,10 +126,10 @@ h1 .grad{background:linear-gradient(100deg,var(--accent),var(--violet) 60%,var(-
 .orbit{position:absolute;inset:0;z-index:3;animation:spin 34s linear infinite}
 .sat{position:absolute;top:50%;left:50%;width:0;height:0;
   transform:rotate(var(--a)) translate(var(--r))}
-.sat .fix{position:absolute;transform:rotate(calc(var(--a) * -1))}
-.sat .cw{position:absolute;transform:translate(-50%,-50%);animation:cspinr 34s linear infinite;
+.sat .fix{position:absolute;left:0;top:0;transform:rotate(calc(var(--a) * -1))}
+.sat .cw{position:absolute;left:0;top:0;transform:translate(-50%,-50%);animation:cspinr 34s linear infinite;
   display:grid;place-items:center}
-.sat img{width:clamp(40px,10vw,54px);height:clamp(40px,10vw,54px);border-radius:31%;object-fit:cover;
+.sat img{width:var(--tile);height:var(--tile);border-radius:31%;object-fit:cover;
   background:var(--card);border:1px solid rgba(245,241,255,.2);
   box-shadow:0 12px 26px -10px #000,0 0 0 6px rgba(10,7,19,.85);
   transition:transform .3s var(--e),box-shadow .3s}
@@ -140,7 +141,7 @@ h1 .grad{background:linear-gradient(100deg,var(--accent),var(--violet) 60%,var(-
 .sat:hover em{opacity:1;transform:translateX(-50%)}
 .port:hover .orbit,.port:hover .sat .cw,.port:hover .sweep{animation-play-state:paused}
 
-.face{position:absolute;top:50%;left:50%;width:calc(var(--pw)*.72);aspect-ratio:1;z-index:2;
+.face{position:absolute;top:50%;left:50%;width:calc(var(--pw)*.66);aspect-ratio:1;z-index:2;
   transform:translate(-50%,-50%);border-radius:50%;overflow:hidden;
   background:linear-gradient(150deg,var(--card),var(--deep));
   box-shadow:0 0 0 7px rgba(10,7,19,.92),0 0 0 8.5px rgba(124,77,255,.55),0 44px 90px -42px #000;
@@ -457,8 +458,7 @@ html[dir="rtl"] .dial-items a{padding:10px 12px 10px 16px}
   footer{justify-content:center;text-align:center}
 }
 @media(max-width:440px){
-  .port{--pw:min(268px,80vw)}
-  .sat img{width:38px;height:38px}
+  .port{--pw:min(268px,80vw);--tile:38px}
   .sat em{font-size:9.5px;padding:3px 8px}
   .pA{inset-inline-start:0;top:12%}.pB{inset-inline-end:0;bottom:13%}
   .dev{width:min(190px,64vw)}

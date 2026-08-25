@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-A personal CV / portfolio asset folder for Mohamed Magdy Ibrahim (Flutter developer) — **not** a software project. There is no package manager, build step, test suite, or version control here. It holds:
+A personal CV / portfolio asset folder for Mohamed Magdy Ibrahim (Flutter developer) — **not** a software project. There is no package manager, build step, or test suite here. It holds:
 
 - `index.html` — the portfolio site: one self-contained page (HTML + CSS + JS, ~1070 lines, ~550 KB)
 - `Mohamed_Magdy_Ibrahim_CV_PlainText.txt` — the canonical CV content; the source of truth for dates, metrics and wording
@@ -34,6 +34,31 @@ Arabic is handled by CSS, not a second stylesheet: `html[lang="ar"]` selectors o
 - Phone mockups parallax on scroll by writing a `--drift` var into `style.translate` — deliberately `translate`, not `transform`, so it does not fight the tilt handler writing `transform`.
 
 Every animated feature has a `@media (prefers-reduced-motion:reduce)` escape, and a global rule at the end of the stylesheet kills all animation and transition. Keep new motion inside that contract, and keep hover-dependent affordances behind `@media(hover:none)` fallbacks.
+
+### The hero portrait / orbit, and two traps it sets
+
+`.port` is a self-contained radial system: a portrait in the middle (`.face`), four app icons
+orbiting on a ring (`.orbit` > `.sat` > `.fix` > `.cw` > `img`), plus a dashed `.path` and a
+rotating `.sweep` arc. Geometry is driven by two custom properties — `--tile` (icon size) and
+`--r`, derived as `(--pw - --tile)/2` so the tiles are always tangent to the column edge rather
+than spilling out of it. Change the icon size via `--tile` (including in the mobile media query),
+never by setting `width`/`height` on `.sat img`, or the ring stops matching the tiles.
+
+Two CSS traps live here, both already fixed — do not reintroduce them:
+
+- **`@keyframes spin` sets `transform`,** so it wipes out any `transform` declared on the same
+  element. Any rotating element that also needs `translate(-50%,-50%)` to centre itself must carry
+  that translate through its own keyframes — that is what `cspin` / `cspinr` exist for. Using plain
+  `spin` on such an element makes the browser matrix-interpolate `translate` → `rotate`, and the
+  element visibly drifts and skews around its orbit.
+- **`.fix` and `.cw` are absolutely positioned and must keep `left:0;top:0`.** With `auto` offsets
+  they fall back to the static position, which is right-aligned under `dir="rtl"` — that shifted
+  every satellite a full tile off the ring in the Arabic view while looking perfect in English.
+  Verify any change to this section in *both* directions.
+
+The three `.face .pf` portraits are stacked and crossfaded by a `setInterval` that toggles `.on`;
+they are square source images sized with `object-fit:cover`, so the CSS must stay for the photo to
+fill the circle at all.
 
 ### Editing content
 
