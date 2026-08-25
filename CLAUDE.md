@@ -6,12 +6,28 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 A personal CV / portfolio asset folder for Mohamed Magdy Ibrahim (Flutter developer) — **not** a software project. There is no package manager, build step, or test suite here. It holds:
 
-- `index.html` — the portfolio site: one self-contained page (HTML + CSS + JS, ~1070 lines, ~550 KB)
-- `Mohamed_Magdy_Ibrahim_CV_PlainText.txt` — the canonical CV content; the source of truth for dates, metrics and wording
-- `Mohamed_Magdy_Ibrahim_Flutter_Developer_ATS.{pdf,docx}`, `Mohamed_Magdy_Ibrahim.pdf` — résumé exports
-- `*.webp`, `*.jpeg`, `*.png` — source artwork (app icons, screenshots, portrait) that is embedded into the HTML as base64
+- `index.html` — the portfolio site: one self-contained page (HTML + CSS + JS, ~1070 lines, ~530 KB)
+- `v2/index.html` — a second, separate portfolio page served at `/v2`
+- `Mohamed_Magdy.pdf` — the résumé the pages link to. Both pages link it by relative path
+  (`Mohamed_Magdy.pdf` from the root, `../Mohamed_Magdy.pdf` from `v2/`), so it must keep this exact
+  name at the repo root or every résumé button 404s.
+- `assets/` — source material, referenced by nothing at runtime (see below):
+  - `cv-plaintext.txt` — the canonical CV content; source of truth for dates, metrics and wording
+  - `cv-ats.docx` — the ATS résumé document
+  - `portrait-suit.jpeg`, `portrait-closeup.jpeg` — portrait originals
+  - `escore-store-poster.webp`, `escore-splash.webp`, `sound-to-read-screenshot.webp`,
+    `tarkibat-hand-mockup.webp`, `tarkibat-icon.webp` — app artwork originals
+
+Nothing in `assets/` is loaded by either page — both are fully self-contained, with every image
+inlined as base64. The folder is the archive of originals the embedded copies were cropped from, so
+edit an image there and it changes nothing until you re-embed it. A portrait used on the page (the
+graduation photo) has no original in `assets/`; it exists only as embedded base64.
 
 To view the page: open `index.html` directly in a browser. No server, no build, no dependencies to install.
+
+Filenames are kebab-case with no spaces, and describe the content rather than its origin — the
+originals arrived as `WhatsApp Image 2026-08-25 at 3.19.50 PM.jpeg` and `Tarkibat-wide.webp` (which
+was in fact a 240×240 square icon, not a wide image). Keep new files to that convention.
 
 ## index.html architecture
 
@@ -60,14 +76,32 @@ The three `.face .pf` portraits are stacked and crossfaded by a `setInterval` th
 they are square source images sized with `object-fit:cover`, so the CSS must stay for the photo to
 fill the circle at all.
 
+### The phone showcase (`.stage`)
+
+The three `.dev` frames are a bezel only — there is deliberately **no fake notch element**. Every
+embedded screenshot already carries its own status bar (Escore an iOS notch, Sound To Read an
+Android status bar, Tarkibat a punch-hole camera), so drawing one over the top produced a black
+blob on the light screenshots.
+
+`.dev` has no `aspect-ratio`; its height comes from `.dev .scr{aspect-ratio:468/988}`, which
+matches the embedded screenshots so `object-fit:cover` crops nothing. If you swap in a screenshot
+with a different aspect, update that ratio and re-normalise the other two — otherwise `cover`
+silently eats the edges of the UI.
+
+Screenshots must be **bare app UI**, not store posters. The original Escore asset was a marketing
+poster containing a phone mockup on a green background, which rendered as a phone inside a poster
+inside a frame; it was replaced by the screen cropped out of that poster, its own background
+extended downward to reach the shared aspect ratio. If a full-length Escore screenshot ever turns
+up, prefer it — the current one is a recovered crop, so it is shorter than the source UI.
+
 ### Editing content
 
-Content changes usually touch three places at once: the markup, `T.en`, and `T.ar`. Facts (job dates, the 65%/54%/5,000+/74% figures, store URLs, education) should stay consistent with `Mohamed_Magdy_Ibrahim_CV_PlainText.txt`. To swap an image, base64-encode it and replace the `src` inline — do not introduce an external image path.
+Content changes usually touch three places at once: the markup, `T.en`, and `T.ar`. Facts (job dates, the 65%/54%/5,000+/74% figures, store URLs, education) should stay consistent with `assets/cv-plaintext.txt`. To swap an image, base64-encode it and replace the `src` inline — do not introduce an external image path.
 
 ## Deployment
 
 The folder is a git repo pushed to `https://github.com/mohamedmagdy2301/mohamed-magdy.git` and served
 by GitHub Pages from the `main` branch, root directory — which is why the page is named `index.html`.
-Everything committed here is public. The résumé links (`nav`, hero CTA, contact dial) point at the
-relative path `Mohamed_Magdy_Ibrahim_Flutter_Developer_ATS.pdf`, so that file must stay in the repo
-root under that exact name.
+Everything committed here is public — including `assets/`, so treat anything placed there as
+published. `v2/index.html` is served at `/v2`; keep both pages' résumé links pointing at
+`Mohamed_Magdy.pdf` at the repo root (see the file inventory above).
