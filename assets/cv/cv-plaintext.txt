@@ -43,7 +43,7 @@ PureSoft | Internship | Aug 2024 - Nov 2024
 - Built responsive Flutter features and animations from Figma designs and worked within the team Git, GitHub, code review and release workflow.
 
 PROJECTS
-CurAi | Flutter, Dart, Clean Architecture, BLoC/Cubit (Graduation Project). Medical appointment booking app with doctor discovery, scheduling and patient profiles. https://github.com/mohamedmagdy2301/CurAi_app_mobile
+CurAi | Flutter, Dart, Clean Architecture, BLoC/Cubit (Graduation Project, graded A+). AI-assisted healthcare platform: owned the whole mobile application within a seven-person team, delivering a symptom-checker chatbot that recommends the right specialty, a clinic map with ratings and instant booking, a doctor dashboard for appointments and patient history, an emergency section, Paymob online payments with a points and rewards system, and brain MRI analysis for tumour detection. https://github.com/mohamedmagdy2301/CurAi_app_mobile
 Azkary | Flutter, Dart, Hive. Offline-first Islamic app with prayer times, azkar and daily supplications, built with local data storage and dark mode and light mode theming. https://github.com/mohamedmagdy2301/azkary_app
 More Flutter projects: news, weather, bookly and notes apps - https://github.com/mohamedmagdy2301
 
@@ -59,6 +59,8 @@ Professional Skills: Problem-Solving, Communication Skills, Collaboration, Teamw
 Languages: Arabic (Native), English (Professional Working Proficiency)
 
 EDUCATION AND CERTIFICATIONS
-Bachelor of Science in Computer Science | Egyptian E-Learning University (EELU) | Graduated 2025
-Professional Diploma in Mobile Application Development (Flutter) | Information Technology Institute (ITI), Menoufia | Sep 2023 - Jul 2024
+Bachelor of Science in Computer Science
+Egyptian E-Learning University (EELU) | Graduated 2025
+Mobile Application Development using Flutter (120 hours)
+Information Technology Institute (ITI), Menoufia | Jul 2023 - Sep 2023
 Certifications: Clean Architecture in Flutter (Foundations and Deep Dive), Flutter Advanced: BLoC and MVVM, Complete Flutter and Dart Development

@@ -1,16 +1,18 @@
 # بروفايل لينكدإن — نصوص جاهزة للنسخ
 
-المصدر المرجعي للبيانات: `assets/cv-plaintext.txt` · البروفايل: linkedin.com/in/mohamedmagdy1911
+المصدر المرجعي للبيانات: `assets/cv/cv-plaintext.txt` · البروفايل: linkedin.com/in/mohamedmagdy1911
 
 **الشرح بالعربي، والنصوص اللي جوه الـ code blocks بالإنجليزي زي ما هي** — دي اللي بتتلزق في لينكدإن
 حرفيًا من غير تعديل. حدود عدد الحروف مكتوبة في العناوين لما لينكدإن يفرضها.
 
 ---
 
-## ١. الـ Headline (٢٢٠ حرف كحد أقصى)
+## ١. ✅ تم — الـ Headline (٢٢٠ حرف كحد أقصى)
+
+اللي شغال دلوقتي على البروفايل:
 
 ```
-Flutter Technical Lead @ Rov Group (Escore) | Cross-Platform Mobile Developer | Flutter · Dart · Clean Architecture · Cubit · WebSockets · Firebase | 4 apps live on Google Play & App Store
+Flutter Technical Lead @ ROV Group | Cross-Platform Mobile Developer | 3 apps live on Google Play & App Store
 ```
 
 بديل لو عايز تبان إنك مفتوح لفرص جديدة:
@@ -139,11 +141,10 @@ Tarkibat — Google Play | App Store
 • Source: github.com/mohamedmagdy2301
 ```
 
-⚠️ ملاحظتين لسه مفتوحين على الـ entry دي بالذات:
-
-- الوصف اتلزق **فقرة واحدة** — افتحها واضغط Enter قبل كل `•`.
-- المهارات لسه مكتوبة `Mobile Application Design and Mobile Technology` — غيّرها لـ
-  `Flutter` · `Dart` · `Clean Architecture` · `Cubit` · `Hive`.
+الملاحظتين القدام (الوصف كان فقرة واحدة، والمهارات كانت `Mobile Application Design and Mobile
+Technology`) اتصلحوا. فاضل حاجة واحدة: شيل ذكر **CurAi** من النقطة الأولى — المشروع بقى مؤرّخ
+`Jan 2025 – Jun 2025` ومربوط بالجامعة، فذكره هنا في `Jan 2024 – Dec 2024` بيتناقض معاه.
+سيب Azkary بس.
 
 ---
 
@@ -185,16 +186,16 @@ developer، وفيها حاجات بتضر زي `Formatting Documents` و `Langu
 سيب الخمسة دول بس: `Computer Science` · `Data Structures` · `Algorithms` ·
 `Object-Oriented Programming (OOP)` · `Software Design Patterns`
 
-### ٤.٢ ITI — تعارض بين الـ CV واللينكدإن
+### ٤.٢ ✅ اتحل — ITI
 
-لينكدإن (ومعاه الشهادة مرفوعة) بيقول: **Jul 2023 – Sep 2023 · 120 hours**، ومشروع نهائي
-"E-Commerce Big Cart".
+كان فيه تعارض: لينكدإن بيقول **Jul 2023 – Sep 2023 · 120 hours** والـ CV بيقول دبلومة ٩ شهور
+(Sep 2023 – Jul 2024). المؤكد هو اللي على لينكدإن ومعاه الشهادة.
 
-`assets/cv-plaintext.txt` بيقول: **«Professional Diploma in Mobile Application Development (Flutter),
-Sep 2023 - Jul 2024»** — يعني دبلومة ٩ شهور.
+الـ CV اتصلح: `assets/cv/cv-plaintext.txt` بقى فيه
+*"Mobile Application Development using Flutter (120 hours) | ITI, Menoufia | Jul 2023 - Sep 2023"*.
+وصفحتي البورتفوليو اتغيروا كمان من "ITI Flutter Diploma" لـ "ITI Flutter Track 2023".
 
-دول مش نفس البرنامج. لو مفيش برنامج تاني بشهادته، يبقى **الـ CV هو اللي محتاج يتصلح** عشان يطابق
-الشهادة. أي recruiter بيقارن الـ CV بالبروفايل هيلاحظ الفرق.
+⚠️ الـ PDF (`Mohamed_Magdy.pdf`) و `assets/cv/cv.docx` لسه فيهم النص القديم ومحتاجين يتعملوا تاني.
 
 ### ٤.٣ الشهادات (Licenses & certifications)
 
@@ -205,13 +206,40 @@ Sep 2023 - Jul 2024»** — يعني دبلومة ٩ شهور.
 ## ٥. قسم Featured (تأثير عالي، خمس دقايق شغل)
 
 القسم دلوقتي فيه: الـ CV، بوست CurAi، ولينك GitHub. **التلات تطبيقات المنشورة مش موجودة**، وهما
-أقوى حاجة عندك. ثبّت اللينكات دي:
+أقوى حاجة عندك.
 
-1. escore.app — ومعاه لينكات App Store و Google Play
-2. Tarkibat — Google Play
-3. Sound To Read — App Store
-4. البورتفوليو — mohamedmagdy2301.github.io/mohamed-magdy/
-5. الـ CV — لينك `Mohamed_Magdy.pdf` أو ارفع الـ PDF مباشرة
+**الخطوات:**
+
+1. من صفحة البروفايل، دوس على علامة **+** اللي جوه قسم Featured نفسه.
+   (لو القسم مش ظاهر أصلاً: **Add profile section ← Recommended ← Add featured**)
+2. اختار **Add a link**.
+3. الزق اللينك ← لينكدإن هيجيب العنوان والصورة لوحده ← عدّل الـ Title والـ Description من الجدول تحت.
+4. كرر لكل لينك.
+5. للترتيب: دوس على القلم ✏️ بتاع القسم كله، وبعدين اسحب من علامة التلات شرط جنب كل عنصر.
+
+**الترتيب مهم** — أول عنصر هو اللي بيتشاف من غير scroll. رتبهم كده:
+
+⚠️ لو طلع لك **"Please enter a valid link"**: اتأكد إنك دوست **Add** مش **Save** على طول، ولو لسه
+بيرفض شيل الـ `https://` والزق الدومين لوحده. روابط Google Drive بتشتغل عادي بالبريفكس، لكن روابط
+الـ App Store اتقبلت من غيره. اللينكات تحت مكتوبة بالشكل اللي اشتغل فعلًا.
+
+| # | اللينك | Title اللي تكتبه | Description |
+|---|---|---|---|
+| ١ | `apps.apple.com/eg/app/escore/id6748279752` | `Escore — Live Sports Platform` | `5,000+ registered users, 74% on iOS. Real-time scores, tournament brackets and offline caching, built in Flutter.` |
+| ٢ | `play.google.com/store/apps/details?id=com.escore.app` | `Escore on Google Play` | `The same Flutter codebase on Android.` |
+| ٣ | `play.google.com/store/apps/details?id=com.puresoft.homeservices` | `Tarkibat — Services Marketplace` | `Connects property owners with tradespeople. Clean Architecture, BLoC/Cubit and Firebase.` |
+| ٤ | `apps.apple.com/us/app/sound-to-read/id6751246943` | `Sound To Read — Phonics for Kids` | `Audio-based phonics lessons for children aged 6–12, published in the kids category.` |
+| ٥ | `mohamedmagdy2301.github.io/mohamed-magdy/` | `Portfolio` | `Case studies for every shipped app, in English and Arabic.` |
+| ٦ | الـ CV (موجود بالفعل) | سيبه | سيبه |
+| ٧ | بوست CurAi (موجود بالفعل) | سيبه | سيبه |
+| ٨ | GitHub (موجود بالفعل) | سيبه | سيبه |
+
+لو مش عايز تحط لينكين لـ Escore، سيب لينك الـ App Store بس (٧٤٪ من مستخدمينك على iOS) وحط
+`escore.app/en` مكان التاني.
+
+💡 لينك المتجر بيجيب أيقونة التطبيق كصورة للكارت لوحده — فالقسم بيبقى شكله زي معرض تطبيقات فعلاً.
+
+💡 لو عايز لينك مباشر للـ CV: `https://mohamedmagdy2301.github.io/mohamed-magdy/Mohamed_Magdy.pdf`
 
 ## ٦. المهارات (Skills)
 
@@ -237,7 +265,7 @@ Google Play Console · App Store Connect · TestFlight · Git · Figma · Postma
 - **Open to work** ← المسميات: Flutter Developer، Mobile Application Developer،
   Senior Flutter Developer. الأماكن: Remote + السعودية + مصر.
 - **الـ Custom URL** نضيف بالفعل (`/in/mohamedmagdy1911`) — سيبه.
-- **صورة الغلاف** فاضية. استخدم artwork بتاع Escore من `assets/escore-splash.webp`.
+- **صورة الغلاف** فاضية. استخدم artwork بتاع Escore من `assets/art/escore-splash.webp`.
 - **قسم Projects** ← شوف القسم ٨.
 
 ---
@@ -314,60 +342,76 @@ Four self-directed Flutter applications built to practise state management, API 
 
 ---
 
-## ٩. قايمة المتبقي بعد مراجعة البروفايل كامل
+## ٩. قايمة المتبقي — محدّثة بعد مراجعة البروفايل
 
-مرتبة حسب اللي بيضرك أكتر. كل اللي فوق القسم ده إما اتعمل أو متغطي.
+**اللي خلص ✅:** الـ Headline · قسم Featured (٥ عناصر) · مهارات ووصف الـ Freelance ·
+مشاريع Escore و Sound To Read و Tarkibat و CurAi اتضافوا بوصف كامل ولينكات المتاجر ·
+ريبوهات GitHub اتربطت بالمشاريع التعليمية · لينك البروفايل بقى "Portfolio" بدل "GITHUB".
 
-### ٩.١ 🔴 الـ Headline لسه "Flutter Developer at Sound to read"
-
-ده نص لينكدإن بيولّده لوحده، متاخد من عقد فريلانس **خلص في يوليو ٢٠٢٥**. وهو أكتر سطر بيتشاف عندك:
-بيظهر في كل نتيجة بحث، وتحت كل بوست وكومنت، وفي كل طلب اتصال. يعني حاليًا بيعلن عن شغل مبقتش فيه
-وبيخفي إنك Technical Lead. الزق الـ headline من القسم ١.
-
-### ٩.٢ 🔴 الإنجليزي مضبوط على "Limited working proficiency"
+### ٩.١ 🔴 الإنجليزي لسه "Limited working proficiency"
 
 الـ CV بيقول *Professional Working Proficiency*. و"Limited" فلتر الـ recruiters بيستخدموه فعلًا في
 الوظايف الـ remote والخليجي — الدروب داون دي لوحدها ممكن تشيلك من نتايج البحث قبل ما حد يقرا حاجة.
 غيّرها لـ `Professional working proficiency`.
 
-### ٩.٣ 🟠 الـ Field of study لسه "Information Technology"
+### ٩.٢ 🔴 قسم Skills بقى ٥٨ مهارة وأول اتنين ظاهرين "Teamwork" و "Ui"
+
+إضافة المهارات مع كل مشروع كبّرت القسم لـ ٥٨، والترتيب بقى عشوائي — أول حاجة الـ recruiter بيشوفها
+في القسم دلوقتي `Teamwork` و `Ui`، مش Flutter.
+
+- ثبّت التلاتة دول في الأول: `Flutter` · `Dart` · `Clean Architecture`
+  (من قسم Skills ← القلم ✏️ ← Reorder / Pin to top)
+- والـ **Top skills** اللي تحت الاسم لسه `Dart · Flutter · GitHub · REST APIs · Software Development` —
+  شيل `GitHub` و `Software Development` وحط `Clean Architecture` و `Cubit (Bloc)`.
+- امسح المهارات المكررة والضعيفة (`Ui`, `Oop`, `Formatting Documents`, `CCNA`, `Language Skills`).
+
+### ٩.٣ 🟠 تواريخ متضاربة جوه البروفايل نفسه
+
+| العنصر | في Experience | في Projects |
+|---|---|---|
+| Escore | `Aug 2025 – Present` | `Aug 2025 – Aug 2026` ❌ |
+| Tarkibat | `Jan 2025 – Mar 2025` | `Jan 2025 – May 2025` ❌ |
+
+خلّي المشروع يطابق الوظيفة في الحالتين. والتضارب ده موجود في الـ CV كمان
+(`assets/cv/cv-plaintext.txt` سطر ١٣ بيقول Rov Group `Aug 2025 - Aug 2026`).
+
+### ٩.٤ 🟠 CurAi لسه بالوصف القديم الضعيف
+
+وصف المشروع ووصف التعليم الاتنين لسه بيقولوا "medical appointment booking application" بتلات نقط.
+الوصف الكامل (تقدير A+، الشات بوت، تحليل MRI، Paymob، الخريطة، لوحة الدكتور، الطوارئ، تيم من ٧)
+موجود في القسم ٤.١ والقسم ٨.١. وغيّر اسم المشروع لـ `CurAi — AI-Assisted Healthcare Platform`.
+
+كمان: خانة الـ Freelance (Jan 2024 – Dec 2024) لسه بتقول إنك عملت CurAi فيها، بينما المشروع
+مؤرّخ `Jan 2025 – Jun 2025` ومربوط بالجامعة. شيل ذكر CurAi من خانة الـ Freelance وسيب Azkary بس.
+
+### ٩.٥ 🟠 الـ Field of study لسه "Information Technology"
 
 الـ `Degree` بقى صح (`Bachelor of Science (BSc)`) بس البروفايل طالع
-*"Bachelor of Science (BSc), Information Technology"*. غيّر `Field of study` لـ `Computer Science`
-عشان يطابق الشهادة والـ CV وصفحتي البورتفوليو.
+*"Bachelor of Science (BSc), Information Technology"*. غيّرها لـ `Computer Science`.
 
-### ٩.٤ 🟠 ITI — الـ CV واللينكدإن بيوصفوا برنامجين مختلفين
+### ٩.٦ 🟡 المشاريع التعليمية بقت أوضح دلوقتي
 
-التفاصيل في القسم ٤.٢.
+بعد ما ضفت Escore و Sound To Read و Tarkibat و CurAi بوصف احترافي، الأربعة التعليمية
+(Chat, News, Notes, Weather) بقت تحتهم على طول والفرق واضح جدًا. امسح News و Notes و Weather
+وسيب Chat app بس. تفاصيل في القسم ٨.٣.
 
-### ٩.٥ 🟠 CurAi موصوف أقل من حجمه بكتير
+### ٩.٧ 🟡 Azkary لسه مش موجود في Projects
 
-الوصف القديم كان بيقول "تطبيق حجز مواعيد بفيه بحث عن دكاترة وبروفايلات مرضى". بوستك أنت نفسك بيقول
-إنه خد تقدير **A+** وفيه شات بوت بيشخص من الأعراض، وتحليل أشعة MRI بالذكاء الاصطناعي لاكتشاف أورام
-المخ، ودفع إلكتروني بـ Paymob مع نظام نقاط، وخريطة عيادات، ولوحة تحكم للدكاترة، وقسم طوارئ — وإنت
-عامل التطبيق كله في تيم من ٧ أفراد.
+النص جاهز في القسم ٨.٢.
 
-الوصف المحدّث موجود في القسم ٤.١ والقسم ٨.١. **ومحتاج يتحدّث في `assets/cv-plaintext.txt` كمان.**
+### ٩.٨ 🟡 الـ Activity كلها ريبوست تحفيزي مش تقني
 
-### ٩.٦ 🟡 الـ Freelance — الملاحظتين بتوع ٣.٥ لسه مفتوحين
+الـ recruiters بيفتحوا الـ Activity عشان يشوفوا إنت بتفكر إزاي في شغلك. مفيش غلط في البوستات دي، بس
+كام بوست تقني — إيه اللي اتعلمته وإنت بتعمل طبقة الـ WebSockets في Escore، إزاي قللت الـ payload
+٦٥٪ — هيغيّروا اللي القسم ده بيقوله عنك. البوستين اللي كتبتهم بنفسك (توظيف Java Spring و UI/UX)
+كويسين — بيقروا lead-level.
 
-الوصف لسه فقرة واحدة، والمهارات لسه القديمة.
+### ٩.٩ 🟡 صورة الغلاف لسه فاضية
 
-### ٩.٧ 🟡 Top skills — `GitHub` بياخد مكان على الفاضي
+استخدم artwork بتاع Escore من `assets/art/escore-splash.webp`.
 
-التفاصيل في القسم ٦.
+### ٩.١٠ 🟡 الـ CV اللي على Drive قديم
 
-### ٩.٨ 🟡 Featured ناقصه التطبيقات المنشورة
-
-التفاصيل في القسم ٥.
-
-### ٩.٩ 🟡 الـ Activity كلها ريبوست تحفيزي مش تقني
-
-آخر النشاط معظمه ريبوست محتوى تحفيزي وديني. الـ recruiters بيفتحوا الـ Activity عشان يشوفوا إنت
-بتفكر إزاي في شغلك. مفيش غلط في البوستات دي، بس كام بوست تقني — إيه اللي اتعلمته وإنت بتعمل طبقة
-الـ WebSockets في Escore، إزاي قللت الـ payload ٦٥٪ — هيغيّروا اللي القسم ده بيقوله عنك تمامًا.
-البوستين اللي كتبتهم بنفسك (توظيف Java Spring و UI/UX) كويسين — بيقروا lead-level.
-
-### ٩.١٠ 🟡 صورة الغلاف فاضية
-
-استخدم artwork بتاع Escore من `assets/escore-splash.webp`.
+الصلاحية مظبوطة (Anyone with the link)، بس الملف نفسه لسه فيه ITI كـ "Professional Diploma" و CurAi
+بالوصف القديم. لما يتعمل PDF جديد، ارفعه من **Manage versions ← Upload new version** عشان اللينك
+مايتغيرش.
