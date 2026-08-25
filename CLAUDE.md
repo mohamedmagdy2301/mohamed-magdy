@@ -6,14 +6,14 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 A personal CV / portfolio asset folder for Mohamed Magdy Ibrahim (Flutter developer) — **not** a software project. There is no package manager, build step, test suite, or version control here. It holds:
 
-- `design-7-showcase.html` — the portfolio site: one self-contained page (HTML + CSS + JS, ~1070 lines, ~550 KB)
+- `index.html` — the portfolio site: one self-contained page (HTML + CSS + JS, ~1070 lines, ~550 KB)
 - `Mohamed_Magdy_Ibrahim_CV_PlainText.txt` — the canonical CV content; the source of truth for dates, metrics and wording
 - `Mohamed_Magdy_Ibrahim_Flutter_Developer_ATS.{pdf,docx}`, `Mohamed_Magdy_Ibrahim.pdf` — résumé exports
 - `*.webp`, `*.jpeg`, `*.png` — source artwork (app icons, screenshots, portrait) that is embedded into the HTML as base64
 
-To view the page: open `design-7-showcase.html` directly in a browser. No server, no build, no dependencies to install.
+To view the page: open `index.html` directly in a browser. No server, no build, no dependencies to install.
 
-## design-7-showcase.html architecture
+## index.html architecture
 
 Everything lives in one file: a single `<style>` block in `<head>`, markup in `<body>`, a single `<script>` at the end. Keep it that way — the page is meant to be openable from disk and mailed as one file. The only external requests are the Google Fonts link (Sora / Plus Jakarta Sans / JetBrains Mono / Tajawal); all images are inlined as `data:image/…;base64` (20 of them), which is why the file is large.
 
@@ -39,7 +39,10 @@ Every animated feature has a `@media (prefers-reduced-motion:reduce)` escape, an
 
 Content changes usually touch three places at once: the markup, `T.en`, and `T.ar`. Facts (job dates, the 65%/54%/5,000+/74% figures, store URLs, education) should stay consistent with `Mohamed_Magdy_Ibrahim_CV_PlainText.txt`. To swap an image, base64-encode it and replace the `src` inline — do not introduce an external image path.
 
-## Known issues in the current file
+## Deployment
 
-- Every résumé link (`nav`, hero CTA, contact dial) points to `Mohamed_Magdy_Ibrahim_Flutter_Developer.pdf`, which does not exist in this folder. The real files are `Mohamed_Magdy_Ibrahim_Flutter_Developer_ATS.pdf` and `Mohamed_Magdy_Ibrahim.pdf`.
-- The portrait crossfade (`.face .pf`, cycled every 4600 ms by toggling `.on`) has **no CSS at all** — there are no `.pf` or `.pf.on` rules, so the three stacked photos are unstyled and the rotation has no visible effect.
+The folder is a git repo pushed to `https://github.com/mohamedmagdy2301/mohamed-magdy.git` and served
+by GitHub Pages from the `main` branch, root directory — which is why the page is named `index.html`.
+Everything committed here is public. The résumé links (`nav`, hero CTA, contact dial) point at the
+relative path `Mohamed_Magdy_Ibrahim_Flutter_Developer_ATS.pdf`, so that file must stay in the repo
+root under that exact name.
