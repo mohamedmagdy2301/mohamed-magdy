@@ -1,0 +1,4 @@
+.playwright-mcp/
+after.png
+before.png
+*.tmp
