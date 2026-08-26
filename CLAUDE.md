@@ -40,7 +40,7 @@ was in fact a 240×240 square icon, not a wide image). Keep new files to that co
 
 ## index.html architecture
 
-Everything lives in one file: a single `<style>` block in `<head>`, markup in `<body>`, a single `<script>` at the end. Keep it that way — the page is meant to be openable from disk and mailed as one file. The only external requests are the Google Fonts link (Sora / Plus Jakarta Sans / JetBrains Mono / Tajawal); all images are inlined as `data:image/…;base64` (20 of them), which is why the file is large.
+Everything lives in one file: a single `<style>` block in `<head>`, markup in `<body>`, a single `<script>` at the end. Keep it that way — the page is meant to be openable from disk and mailed as one file. The only external requests are the Google Fonts link (Sora / Plus Jakarta Sans / JetBrains Mono / Tajawal) and, on the published site only, the GoatCounter loader (see *Analytics* below); all images are inlined as `data:image/…;base64` (20 of them), which is why the file is large.
 
 ### Bilingual EN/AR with runtime switching
 
@@ -131,6 +131,27 @@ both close it; `pvDepth` counts how many projects deep the visit went so one Esc
 altogether. A gallery image whose aspect ratio is not within 0.06 of the phone frame's (468/988)
 loses the bezel and renders as a plain card — that is what keeps store thumbnails from being
 cropped into a fake phone.
+
+## Analytics
+
+Both pages carry an identical GoatCounter snippet just before `</head>` — a privacy-friendly,
+cookieless hit counter reporting to https://mohamedmagdy.goatcounter.com. The account name lives in
+one `CODE` constant per page; blank it to switch counting off everywhere. When the page is opened
+over `file:` or from localhost the loader returns before creating any script tag, which is what
+keeps a mailed or offline copy free of requests beyond the fonts. Match that host check exactly if
+you touch it — an earlier anchored regex (`/^(localhost|127\.|…)$/`) silently failed to exclude
+`127.0.0.1`, so local previews were counted.
+
+Nothing was ever collected before this was added, and it cannot backfill: the counts start from the
+moment the code is filled in and deployed. It reports aggregates only — visits, country, browser,
+device, referrer, page — never visitor identity.
+
+`v2` additionally defines `window.gcCount(path, title)` and calls it from `pvOpen()`, so opening a
+case study is counted as `/v2/p/<key>` instead of vanishing into the `#p/<key>` hash. Calls made
+before the loader arrives are queued and flushed on its `onload`, which is the deep-link-on-load
+case (`/v2/#p/escore`). Keep `gcCount` defined **before** the body script — `pvFromHash()` runs at
+the end of it and can reach `pvOpen()` immediately. In `index.html` there is no `gcCount`; the
+plain pageview is all that page needs.
 
 ## Deployment
 

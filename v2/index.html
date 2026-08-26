@@ -546,6 +546,40 @@ html[lang="ar"] .pv-facts dd{font-weight:400}
   .frame .pf{transform:none}
 }
 </style>
+<!-- Visit counting (GoatCounter). Privacy-friendly: no cookies, no personal data.
+     Dashboard: https://mohamedmagdy.goatcounter.com
+     Never fires from a disk copy or localhost, so a mailed/offline copy of this file
+     stays request-free apart from the fonts.
+     Also exposes gcCount() so opening a case study registers as its own view —
+     the sheet is a #p/<key> hash, which a plain pageview would not distinguish. -->
+<script>
+window.gcCount = function(){};                         /* no-op unless enabled below */
+(function(){
+  var CODE = 'mohamedmagdy';                  /* goatcounter.com account name */
+  if (!CODE) return;                          /* disables counting entirely */
+  if (location.protocol === 'file:') return;  /* opened straight from disk */
+  var h = location.hostname;                  /* local previews must not be counted */
+  if (h === 'localhost' || h === '0.0.0.0' || h === '::1' || h === '[::1]'
+      || /^127\./.test(h) || /\.localhost$/.test(h)) return;
+
+  var queued = [];
+  function flush(){
+    if (!(window.goatcounter && window.goatcounter.count)) return;
+    while (queued.length) window.goatcounter.count(queued.shift());
+  }
+  window.gcCount = function(path, title){
+    queued.push({path:path, title:title, event:false});
+    flush();
+  };
+
+  var s = document.createElement('script');
+  s.async = true;
+  s.src = '//gc.zgo.at/count.js';
+  s.setAttribute('data-goatcounter', 'https://' + CODE + '.goatcounter.com/count');
+  s.onload = flush;
+  document.head.appendChild(s);
+})();
+</script>
 </head>
 
 <body>
@@ -1612,6 +1646,7 @@ function pvOpen(k,push){
   pv.classList.add('on'); pv.setAttribute('aria-hidden','false');
   document.documentElement.classList.add('pvopen');
   pvScroll.scrollTop=0;
+  gcCount('/v2/p/'+k, 'Project: '+k);
   if(push!==false){
     try{ history.pushState({pv:k},'','#p/'+k); pvDepth++; }
     catch(e){ location.hash='p/'+k }
